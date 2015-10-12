@@ -24,10 +24,11 @@
 	           <form action="index.php" method="get">
                     <h1>Login</h1>
                       <!-- recuadros txt-->
-		          <input type="text" placeholder="Escribe tu usuario" name="usuario" required />
-		          <input type="password" placeholder="Escribe tu contraseña " name="contraseña" required/>
+		          <input type="text" placeholder="Escribe tu usuario" name="usuario" required /> <div id="msj"> </div><div id="msj"> </div>
+		          <input id="pass"type="password" placeholder="Escribe tu contraseña " name="contraseña" required onkeyup="valida()"/>
+
 		              <!-- botones-->
-		          <button type="submit" ><h2>Ingresar</h2></button>
+		          <button id="ingresar"type="submit" ><h2>Ingresar</h2></button>
                 
 	           </form>
             	
@@ -36,6 +37,31 @@
             <p> Adios </p>
         </footer>
         </div>
+
+        <script> ///codigo en javascript para validar la longitud del campo de password 
+            function valida(){
+                //realiza la ación de validar*/
+                var pass = document.getElementById('pass').value;// este pass es equivalente al campo imput del password del html
+                //long será la longitud del password escrito por el usuario*/
+                var long = pass.length;  // alert = hace aparecer la ventanita (pass.length); //length = longitud de cadena
+                var input = document.getElementById('pass');
+                var ingresar= document.getElementById('ingresar');
+                var mensaje= document.getElementById('msj')            ///hacer id = innerHTML="te falta completar este campo"
+
+
+                if(long >=8){
+                    input.style.backgroundColor="#EAF7BF";
+                    ingresar.disabled=false;
+                    
+                }else{
+                    input.style.backgroundColor="#f2f2f2";
+                    ingresar.disabled=true;
+                    mensaje.innerHTML="aún no completas éste campo"
+
+                }
+            }
+
+        </script>
     </body>
 </html>
 

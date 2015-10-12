@@ -108,6 +108,13 @@ form button {
 form button:hover {
     background-color: #1717f7;
 }
+
+#msj{
+    font-family: Helvetica;
+    color: red;
+    text-align: center;
+    font-size: 10px;
+}
 /*//////////////////////////////////////////////////////////////////
                    termina  login.html
 //////////////////////////////////////////////////////////////////*/
